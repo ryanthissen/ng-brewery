@@ -1,3 +1,19 @@
 <h1>
   {{title}}
 </h1>
+
+<input name="search" #searchTerm>
+
+<button (click)="performSearch(searchTerm)">Search</button>
+
+<br>
+
+<div *ngFor="let r of results">
+  <br>
+  <h3 class="title">Beer Name: {{r.name}}</h3>
+  <div class="">Beer Type: {{r.type_name}}</div>
+  <div>Description: {{r.description}}</div>
+  <div>IBUs: {{r.ibu}}</div>
+  <img src="{{r.label_url}}">
+  <br>
+</div>
